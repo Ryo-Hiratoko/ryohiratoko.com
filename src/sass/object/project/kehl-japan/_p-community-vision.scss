@@ -149,7 +149,9 @@
   border-radius: rem(12); // 角丸
   overflow: hidden;
   box-shadow: 0 rem(8) rem(24) rgba(0, 0, 0, 0.15); // 影をつけて浮かせる
-  
+  transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0s;  
+  cursor: pointer;
+
   // 1枚目の配置（左後ろ）
   &:nth-child(1) {
     top: 10%;
@@ -175,6 +177,11 @@
     transform: rotate(5deg); // 少し傾ける
     z-index: 2;
   }
+}
+.p-community-vision__img-wrapper:hover {
+  z-index: 100 !important; /* 強制的に最前面へ */
+  transform: scale(1.1) rotate(0deg) !important; /* 少し拡大して、角度をまっすぐに（見やすく） */
+  box-shadow: 0 rem(16) rem(40) rgba(0, 0, 0, 0.25); /* 影を濃くして浮遊感を強調 */
 }
 
 .p-community-vision__img {

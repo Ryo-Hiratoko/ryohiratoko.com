@@ -88,37 +88,28 @@ const workSwiper = new Swiper(".js-swiper", {
 // });
 
 document.addEventListener('DOMContentLoaded', function() {
-  
-  // .my-vision-swiper が存在するかチェック（エラー防止）
-  const visionSliderEl = document.querySelector('.my-vision-swiper');
 
-  if (visionSliderEl) {
-    const visionSwiper = new Swiper('.my-vision-swiper', {
-      // パラメータ設定
-      loop: true, // 無限ループ
-      speed: 1000, // 切り替え速度
-      effect: 'fade', // フェードエフェクト
-      fadeEffect: {
-        crossFade: true
-      },
-      
-      // 自動再生
-      autoplay: {
-        delay: 4000,
-        disableOnInteraction: false,
-      },
+  // GSAPとScrollTriggerが読み込まれているか、かつターゲット要素があるか確認
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && document.querySelector('.js-vision-section')) {
+    
+    // プラグイン登録
+    gsap.registerPlugin(ScrollTrigger);
 
-      // ページネーション
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
+    // アニメーション設定
+    gsap.from(".js-vision-img", {
+      y: 60,         // 下から60px浮き上がる
+      opacity: 0,    // 透明から不透明へ
+      scale: 0.9,    // 少し小さい状態から等倍へ
+      duration: 1.0, // 1秒かけて
+      ease: "power3.out", // ふわっと
+      stagger: 0.2,  // 0.2秒ずつずらして順番に
       
-      // アクセシビリティ
-      a11y: {
-        prevSlideMessage: 'Previous slide',
-        nextSlideMessage: 'Next slide',
-      },
+      scrollTrigger: {
+        trigger: ".js-vision-section", // このセクションが
+        start: "top 75%", // 画面の75%の位置に来たら発火
+        toggleActions: "play none none none", // 一度だけ再生
+        // markers: true // デバッグ用（本番では削除）
+      }
     });
   }
 });
