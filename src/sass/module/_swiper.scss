@@ -1,0 +1,95 @@
+@use "global" as *;
+
+/* スライダーのベースコンテナ */
+.js-swiper {
+  width: 100%;
+  padding-top: rem(48);
+  padding-bottom: rem(48);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+/* スライド要素のスタイル */
+.js-swiper .swiper-slide {
+  width: rem(304);
+
+  @include mq("md") {
+    width: 33.333%;
+  }
+}
+
+/* ナビゲーションボタンの共通スタイル */
+.swiper-button-next,
+.swiper-button-prev {
+  width: rem(40);
+  height: rem(40);
+  background-color: $main-green;
+  border-radius: 50%;
+  color: $white;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ボタンアイコンのサイズ */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: rem(20);
+}
+
+/* ホバー時の背景色変更 */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: lighten($main-green, 10%);
+}
+
+/* 前へボタンの位置 */
+.swiper-button-prev {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* 次へボタンの位置 */
+.swiper-button-next {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* レスポンシブ対応 */
+@include mq("md") {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: rem(32);
+    height: rem(32);
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: rem(16);
+  }
+}
+
+@include mq("md") {
+  .js-swiper .swiper-slide {
+    width: 80%;
+  }
+}
+
+
+.swiper-button-prev .swiper-navigation-icon {
+  transform: rotate(180deg);
+}
+
+.swiper-navigation-icon {
+  height: rem(16)!important;
+}

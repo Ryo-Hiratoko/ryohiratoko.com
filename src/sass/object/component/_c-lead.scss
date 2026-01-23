@@ -1,0 +1,11 @@
+@use "global"as *;
+
+
+.c-lead {
+    font-family: $sub-font-family;
+    letter-spacing: 0.1em;
+
+    @include mq("md") {
+        font-size: rem(24);
+    }
+}

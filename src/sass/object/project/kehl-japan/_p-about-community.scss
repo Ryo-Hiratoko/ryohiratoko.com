@@ -1,0 +1,170 @@
+@use "global" as *;
+
+.p-about-community {
+  padding-top: rem(80);
+  padding-bottom: rem(80);
+}
+
+.p-about-community__inner {
+  padding-right: $padding-sp;
+  padding-left: $padding-sp;
+
+  @include mq("md") {}
+}
+
+.p-about-community__title {
+  text-align: center;
+}
+
+.p-about-community__content {
+  margin-top: rem(40);
+}
+
+.p-about-community__items {
+  display: flex;
+  justify-content: center;
+
+  gap: rem(32);
+  margin-right: auto;
+  margin-left: auto;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+
+  @include mq("md") {
+    align-items: stretch; // ensure all .p-about-community__item have equal height
+    flex-direction: row;
+  }
+}
+
+.p-about-community__item {
+  background: $white;
+  border-radius: rem(16);
+  padding-top: rem(24);
+  width: rem(360);
+  // min-height removed to allow flexible height
+  text-align: center;
+  box-shadow: 0 rem(4) rem(6) rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.p-about-community__item--gray {
+  background: $lighter-green;
+}
+
+.p-about-community__item--orange {
+  background: $accent-orange;
+}
+
+.p-about-community__item--black {
+  background: $black;
+  color: $white;
+}
+
+.p-about-community__head {
+  padding-left: rem(40);
+  padding-right: rem(40);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+
+.p-about-community__amount {
+  margin-top: rem(16);
+  font-size: rem(14);
+}
+
+.p-about-community__num {
+  font-size: rem(32);
+  font-weight: $bold;
+}
+
+.p-about-community__btn {
+  margin-top: rem(16);
+  margin-bottom: rem(24);
+  height: rem(48);
+}
+
+.p-about-community__btn--white {
+  background-color: $white;
+  color: $black;
+  border: rem(1) solid $gray;
+  transition: color 0.3s;
+}
+
+.p-about-community__btn--white:hover {
+  color: lighten($black, 30%);
+}
+
+.p-about-community__btn--black {
+  background-color: $black;
+  color: $white;
+  transition: background-color 0.3s;
+}
+
+.p-about-community__btn--black:hover {
+  background-color: lighten($black, 10%);
+}
+
+.p-about-community__btn--orange {
+  background-color: $accent-orange;
+  color: $black;
+  transition: background-color 0.3s;
+}
+
+.p-about-community__btn--orange:hover {
+  background-color: lighten($accent-orange, 10%);
+}
+
+.p-about-community__border {
+  width: 100%;
+  height: rem(1);
+}
+
+.p-about-community__border--gray {
+  background-color: $gray;
+}
+
+.p-about-community__border--white {
+  background-color: $white;
+}
+
+.p-about-community__features {
+  list-style: none;
+  padding: 0;
+  margin-top: rem(32);
+  margin-bottom: rem(32);
+  text-align: left;
+  padding-left: rem(24);
+  padding-right: rem(24);
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: rem(32);
+  justify-content: space-between;
+}
+
+.p-about-community__feature  {
+  display: flex;
+  align-items: flex-start;
+  gap: rem(8);
+}
+
+.p-about-community__icon {
+  width: rem(20);
+  height: rem(20);
+  flex-shrink: 0;
+  margin-top: rem(2);
+}
+
+.p-about-community__service {
+  font-size: rem(14);
+  line-height: 1.5;
+}

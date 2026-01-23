@@ -1,0 +1,184 @@
+@use "global"as *;
+
+/* ===== Campaign Section ===== */
+.p-campaign {}
+
+/* --- 背景ラッパー --- */
+.p-campaign__bg {
+  background: linear-gradient(135deg, $white, $light-orange);
+  border-radius: rem(24);
+
+  margin-right: rem(24);
+  margin-left: rem(24);
+
+  padding-top: rem(24);
+  padding-right: rem(24);
+  padding-bottom: rem(24);
+  padding-left: rem(24);
+
+  margin-bottom: rem(64);
+  box-shadow: 0 rem(20) rem(40) rgba(0, 0, 0, 0.05);
+
+  @include mq("md") {
+    max-width: rem(1280);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-top: rem(64);
+    padding-right: rem(64);
+    padding-bottom: rem(64);
+    padding-left: rem(64);
+  }
+}
+
+/* --- フレックスレイアウト --- */
+.p-campaign__inner {
+  display: flex;
+  flex-direction: column;
+  gap: rem(24);
+
+  @include mq("md") {
+    flex-direction: row;
+    align-items: center;
+    gap: rem(40);
+  }
+}
+
+.p-campaign__head,
+.p-campaign__content {
+  flex: 1;
+}
+
+/* --- バッジ --- */
+.p-campaign__badge {
+  display: flex;
+  align-items: center;
+  gap: rem(12);
+  margin-bottom: rem(16);
+  /* 方向指定済み */
+}
+
+.p-campaign__badge-icon {
+  font-size: rem(32);
+  color: $main-green;
+}
+
+.p-campaign__badge-label {
+  background: $main-green;
+  color: $white;
+
+  /* 上下 rem(4), 左右 rem(16) */
+  padding-top: rem(4);
+  padding-bottom: rem(4);
+  padding-left: rem(16);
+  padding-right: rem(16);
+
+  border-radius: 9999px;
+  font-size: rem(14);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* --- 見出し・リード --- */
+.p-campaign__title {
+  font-size: rem(40);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: rem(24);
+}
+
+.p-campaign__lead {
+  font-size: rem(18);
+  color: $black;
+  margin-bottom: rem(32);
+  max-width: 40ch;
+}
+
+/* --- 価格ボックス --- */
+.p-campaign__price-box {
+  background: $white;
+  border-radius: rem(16);
+
+  /* 四方向 rem(32) */
+  padding-top: rem(32);
+  padding-right: rem(32);
+  padding-bottom: rem(32);
+  padding-left: rem(32);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.p-campaign__price {
+  font-size: rem(32);
+  font-weight: 700;
+  color: $main-green;
+  margin-bottom: rem(8);
+}
+
+.p-campaign__price-unit {
+  font-size: rem(14);
+  font-weight: 400;
+  color: $black;
+  margin-left: rem(4);
+  /* すでに方向指定 */
+}
+
+/* --- 特徴リスト --- */
+.p-campaign__features {
+  list-style: none;
+  margin-bottom: rem(24);
+  /* 方向指定済み */
+}
+
+.p-campaign__feature {
+  display: flex;
+  align-items: center;
+  gap: rem(12);
+  margin-bottom: rem(12);
+  /* 方向指定済み */
+  font-size: rem(16);
+
+  i {
+    color: $main-green;
+  }
+}
+
+/* --- CTA ボタン --- */
+
+.p-campaign__btn {
+  height: rem(48);
+}
+
+.p-campaign__btn--white {
+  background-color: $white;
+  color: $black;
+  border: rem(1) solid $gray;
+  transition: color 0.3s;
+}
+
+.p-campaign__btn--white:hover {
+  color: lighten($black, 30%);
+}
+
+.p-campaign__btn--black {
+  background-color: $black;
+  color: $white;
+  transition: background-color 0.3s;
+}
+
+.p-campaign__btn--black:hover {
+  background-color: lighten($black, 10%);
+}
+
+.p-campaign__btn--orange {
+  background-color: $accent-orange;
+  color: $black;
+  transition: background-color 0.3s;
+}
+
+.p-campaign__btn--orange:hover {
+  background-color: lighten($accent-orange, 10%);
+}

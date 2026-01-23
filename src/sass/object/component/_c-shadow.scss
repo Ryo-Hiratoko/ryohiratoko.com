@@ -1,0 +1,5 @@
+@use "global"as *;
+
+.c-shadow {
+    box-shadow: rem(8) rem(8) rem(12) 0 rgba(#000, 0.1);
+}

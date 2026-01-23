@@ -1,0 +1,47 @@
+@use "global" as *;
+
+.l-error {
+    @include mq("md") {
+    }
+
+}
+
+.l-error__container {
+    padding-top: rem(80);
+    padding-bottom: rem(80);
+    @include mq("md") {
+        
+        padding-top: rem(320);
+        padding-bottom: rem(160);
+        text-align: center;
+    }
+}
+
+.l-error__title {
+    font-size: rem(24);
+
+    @include mq("md") {
+        font-size: rem(40);
+    }
+}
+
+.l-error__text {
+    font-size: rem(16);
+
+    @include mq("md") {
+        padding-top: rem(10);
+        font-size: rem(24);    
+    }
+}
+
+.l-error__btn {
+    margin-top: rem(24);
+        
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mq("md") {
+        margin-top: rem(40);
+
+    }
+}

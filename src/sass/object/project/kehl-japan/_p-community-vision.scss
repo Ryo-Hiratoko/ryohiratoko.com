@@ -1,0 +1,192 @@
+@use "global" as *;
+
+.p-community-vision {
+  padding-top: rem(80);
+  padding-bottom: rem(20);
+
+  @include mq("md") {
+    padding-top: rem(100);
+    padding-bottom: rem(40);  }
+}
+
+.p-community-vision__inner {
+  padding-right: $padding-sp;
+  padding-left: $padding-sp;
+
+  @include mq("md") {
+    padding-right: $padding-pc;
+    padding-left: $padding-pc;
+  }
+}
+
+.p-community-vision__head {
+  text-align: center;
+  margin-bottom: rem(40);
+
+  @include mq("md") {
+    margin-bottom: rem(64);
+  }
+}
+
+.p-community-vision__title {
+  font-size: rem(24);
+  color: $black;
+
+  @include mq("md") {
+    font-size: rem(32);
+  }
+}
+
+.p-community-vision__content {
+  
+  @include mq("md") {
+
+  }
+}
+
+.p-community-vision__text {
+  text-align: center;
+  margin-top: rem(16);
+  // スライダーとの間隔を空ける
+  margin-bottom: rem(40);
+
+  @include mq("md") {
+    margin-bottom: rem(64);
+  }
+}
+
+/* ★★★ スライダー用のスタイルを追加 ★★★ */
+.p-community-vision__slider {
+  width: 100%;
+  max-width: rem(800); // テキスト幅と合わせるか、少し広げる
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Swiperコンテナ自体の調整
+.my-vision-swiper {
+  width: 100%;
+  // 角丸をつけて柔らかい印象に
+  border-radius: rem(12);
+  overflow: hidden; 
+  box-shadow: 0 rem(4) rem(12) rgba(0, 0, 0, 0.1);
+}
+
+// 画像自体のスタイル
+.p-community-vision__img {
+  width: 100%;
+  height: auto;
+  // アスペクト比を固定してガタつきを防ぐ（例: 16:9）
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  vertical-align: bottom; // 画像下の隙間を消す
+}
+
+/* Swiperのページネーション（点々）の色調整 */
+.swiper-pagination-bullet-active {
+  background-color: $main-green; // サイトのメインカラーに合わせる
+}
+
+
+
+// PCで横並びにするためのFlexコンテナ
+.p-community-vision__body {
+  @include mq("md") {
+    display: flex;
+    align-items: center; // 上下中央揃え
+    gap: rem(40); // テキストと写真の間の余白
+    flex-direction: row-reverse; // 写真を右、テキストを左にする場合
+  }
+  @include mq("lg") {
+    gap: rem(60);
+  }
+}
+
+// テキストエリア
+.p-community-vision__content {
+  @include mq("md") {
+    flex: 1; // 幅を分け合う
+    text-align: left; // PCでは左揃えが見やすいかも（お好みで）
+  }
+}
+
+// 既存のテキストスタイル調整
+.p-community-vision__text {
+  text-align: center; // スマホは中央揃え
+  margin-top: rem(16);
+
+  @include mq("md") {
+    text-align: left; // PCは左揃え
+    margin-top: 0;
+  }
+}
+
+/* --- 写真コラージュ部分 --- */
+.p-community-vision__images {
+  position: relative;
+  margin-top: rem(40); // スマホでのテキストとの余白
+  width: 100%;
+  max-width: rem(400); // スマホでの写真エリアの最大幅
+  margin-left: auto;
+  margin-right: auto;
+  // コラージュの高さを確保（写真のアスペクト比に応じて調整が必要）
+  aspect-ratio: 4 / 3; 
+
+  @include mq("md") {
+    flex: 1; // 幅を分け合う
+    margin-top: 0;
+    max-width: rem(500); // PCでの最大幅
+  }
+}
+
+// 写真のラッパー（配置用）
+.p-community-vision__img-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%; // 親要素に対する幅
+  height: auto;
+  border-radius: rem(12); // 角丸
+  overflow: hidden;
+  box-shadow: 0 rem(8) rem(24) rgba(0, 0, 0, 0.15); // 影をつけて浮かせる
+  
+  // 1枚目の配置（左後ろ）
+  &:nth-child(1) {
+    top: 10%;
+    left: 0;
+    transform: rotate(-5deg); // 少し傾ける
+    z-index: 1;
+  }
+  
+  // 2枚目の配置（中央最前面）
+  &:nth-child(2) {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    z-index: 3;
+    width: 80%; // これだけ少し大きく
+  }
+  
+  // 3枚目の配置（右後ろ）
+  &:nth-child(3) {
+    top: 20%;
+    right: 0;
+    left: auto;
+    transform: rotate(5deg); // 少し傾ける
+    z-index: 2;
+  }
+}
+
+.p-community-vision__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  // アスペクト比を揃える（例：4:3の画像）
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+// ちょっとした余白用ユーティリティクラス（もし無ければ）
+.u-mt-24 {
+  margin-top: rem(24);
+}

@@ -1,0 +1,86 @@
+@use "global"as *;
+
+.p-lp {}
+
+.p-lp__content {
+  display: flex;
+  flex-direction: column-reverse;
+
+  @include mq("md") {
+    justify-content: right;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: row;
+  }
+}
+
+.p-lp__img {
+  z-index: -20;
+  // overflow: hidden;
+  margin-left: auto;
+  max-width: rem(440);
+  max-height: rem(440);
+
+  @include mq("md") {
+    margin-left: 0;
+    margin-right: rem(-120);
+    max-width: unset;
+    max-height: unset;
+    width: rem(880);
+  }
+}
+
+.p-lp__img img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+
+  @include mq("md") {
+    object-position: center;
+  }
+}
+
+.p-lp__container {
+  padding-top: rem(40);
+  padding-bottom: rem(40);
+  padding-left: rem(24);
+  padding-right: rem(24);
+
+  @include mq("md") {
+    padding: 0;
+    margin-bottom: rem(16);
+    width: 56.41%;
+    max-width: calc( rem(680) + calc(calc(100vw - rem(1200)) /2 ) );
+  }
+}
+
+.p-lp__article {
+  @include mq("md") {
+    padding-top: rem(160);
+    padding-bottom: rem(160);
+    padding-left: rem(120);
+    max-width: rem(600);
+  }
+}
+
+.p-lp__lead {
+
+  @include mq("md") {
+    margin-top: rem(24);
+  }
+}
+
+.p-lp__title {
+  margin-top: rem(16);
+  @include mq("md") {
+    margin-top: rem(24);
+  }
+}
+
+.p-lp__body {
+  margin-top: rem(24);
+
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}

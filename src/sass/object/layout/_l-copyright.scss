@@ -1,0 +1,15 @@
+@use "global"as *;
+
+.l-copyright {
+    width: 100%;
+    background-color: $black;
+    text-align: center;
+}
+
+
+.l-copyright__text {
+    color: $white;
+    font-size: rem(10);
+    padding-top: rem(16);
+    padding-bottom: rem(16);
+}

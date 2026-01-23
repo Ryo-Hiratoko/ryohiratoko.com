@@ -1,0 +1,167 @@
+@use "global" as *;
+
+/* セクション全体 */
+.p-contact {
+  background-color: $light-gray;
+}
+
+.p-contact__inner {
+  padding-top: rem(80);
+  padding-bottom: rem(80);
+
+  @include mq("md") {
+    padding-top: rem(120);
+    padding-bottom: rem(120);
+  }
+}
+
+.p-contact__head {
+  text-align: center;
+  margin-bottom: rem(40);
+}
+
+.p-contact__title {
+  font-size: rem(32);
+}
+
+.p-contact__lead {
+  margin-top: rem(24);
+  font-size: rem(16);
+
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+
+.p-contact__body {
+  margin-top: rem(40);
+}
+
+.p-contact__form {
+  margin-top: rem(24);
+}
+
+.p-contact__form form {
+  background-color: $lighter-green;
+  border-radius: rem(4);
+  padding-top: rem(40);
+  padding-left: rem(24);
+  padding-right: rem(24);
+  background-color: $white;
+  max-width: rem(720);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.p-contact__note {
+  margin-top: rem(16);
+  display: flex;
+  justify-content: center;
+  
+  @include mq("md") {
+    margin-top: rem(24);
+  }
+}
+
+.p-contact__text {
+  text-align: center;
+  font-size: rem(14);
+}
+
+// ========== FORM ELEMENTS ========== //
+
+.c-form form {
+  background-color: $light-gray;
+}
+
+.c-form__group {
+  margin-bottom: rem(32);
+}
+
+.c-form__label-wrapper {
+  margin-bottom: rem(8);
+}
+
+.c-form__label {
+  font-size: rem(16);
+  display: inline-block;
+}
+
+.c-form__required {
+  display: inline-block;
+  margin-left: rem(12);
+  font-size: rem(12);
+  background-color: $main-green;
+  color: $white;
+  border-radius: rem(12);
+  padding: rem(2) rem(8);
+  line-height: 1;
+  vertical-align: middle;
+
+  padding-top: rem(4);
+  padding-bottom: rem(4);
+  padding-left: rem(12);
+  padding-right: rem(12);
+}
+
+.c-form__input input,
+.c-form__input textarea,
+.c-form__input select {
+  width: 100%;
+  border: rem(1) solid $gray;
+  border-radius: rem(4);
+  padding: rem(12);
+  font-size: rem(16);
+  background-color: $white;
+  color: $black;
+}
+
+.c-form__input--textarea textarea {
+  min-height: rem(160);
+  resize: vertical;
+}
+
+.c-form__submit {
+  margin-top: rem(48);
+  text-align: center;
+}
+
+.c-form__btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: rem(200);
+  height: rem(56);
+  background-color: $accent-orange;
+  color: $black;
+  font-size: rem(16);
+  font-weight: $bold;
+  text-align: center;
+  border-radius: rem(28);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.c-form__btn:hover {
+  background-color: lighten($accent-orange, 10%);
+  transform: translateY(-2px);
+}
+
+.c-form__btn:focus-within {
+  outline: rem(2) solid lighten($accent-orange, 30%);
+  outline-offset: rem(4);
+}
+
+.c-form__btn input[type="submit"] {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: center;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}

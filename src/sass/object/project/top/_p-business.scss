@@ -1,0 +1,22 @@
+@use "global"as *;
+
+.p-business {
+  position: relative;
+  overflow: hidden;
+  padding-top: rem(64);
+
+  @include mq("md") {
+    padding-top: rem(100);
+  }
+}
+
+.p-business__title {
+  color: $main-green;
+  font-size: rem(32);
+  letter-spacing: 0.1em;
+
+  @include mq("md") {
+    font-size: rem(40);
+    letter-spacing: 0.2em;
+  }
+}

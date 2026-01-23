@@ -1,0 +1,10 @@
+@use "global" as *;
+
+// Hide the loading spinner shown during form submission
+.wpcf7-spinner {
+  display: none !important;
+}
+
+.wpcf7-form {
+  padding: 0!important;
+}

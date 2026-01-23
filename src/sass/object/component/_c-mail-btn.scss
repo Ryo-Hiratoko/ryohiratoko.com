@@ -1,0 +1,57 @@
+@use "global"as *;
+
+.c-mail-btn {
+    color: $white;
+    background-color: $accent-orange;
+    width: rem(64);
+    height: rem(64);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    box-shadow: rem(2) rem(2) rem(8) rgba(0, 0, 0, 0.1); /* X方向: 0, Y方向: 4px, ぼかし: 8px, 色: 黒の20%透明 */
+    overflow: hidden; /* 円形以外の部分を非表示にし、クリックを無効にする */
+
+    @include mq("md") {
+        width: rem(88);
+        height: rem(88);
+    }
+}
+
+.c-mail-btn > a {
+    width: inherit;
+    height: inherit;
+    overflow: hidden; /* 円形以外の部分を非表示にし、クリックを無効にする */
+    border-radius: 50%; /* a要素も円形にしてクリック範囲を制限 */
+}
+
+.c-mail-btn__inner {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.c-mail-btn__icon {
+    width: rem(36);
+
+    @include mq("md") {
+        width: rem(40);
+    }
+}
+
+@keyframes rotate-mail-ease {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.c-mail-btn:hover .c-mail-btn__icon img,
+.c-mail-btn:focus-visible .c-mail-btn__icon img {
+    animation: rotate-mail-ease 0.8s ease;
+}
+
+.c-mail-btn:hover {
+  background-color: lighten($accent-orange, 5%);
+}
