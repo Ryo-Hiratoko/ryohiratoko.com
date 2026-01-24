@@ -129,35 +129,65 @@
   border-radius: rem(12);
   overflow: hidden;
   box-shadow: 0 rem(8) rem(24) rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0s 0.3s;
   cursor: pointer;
-}
-
-.p-community-vision__img-wrapper:nth-child(1) {
-  top: 10%;
-  left: 0;
-  transform: rotate(-5deg);
-  z-index: 1;
-}
-
-.p-community-vision__img-wrapper:nth-child(2) {
-  top: 0;
-  left: 50%;
-  width: 80%;
-  transform: translateX(-50%) rotate(0deg);
-  z-index: 3;
-}
-
-.p-community-vision__img-wrapper:nth-child(3) {
-  top: 20%;
-  right: 0;
-  left: auto;
-  transform: rotate(5deg);
-  z-index: 2;
 }
 
 .p-community-vision__img-wrapper:hover {
   z-index: 500;
   transform: scale(1.1) rotate(0deg) !important;
   box-shadow: 0 rem(16) rem(40) rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0s 0s;
+}
+
+/* --- 1枚目（左） --- */
+.p-community-vision__img-wrapper:nth-child(1) {
+  top: 10%;
+  left: 0;
+  transform: rotate(-5deg);
+  z-index: 3;
+}
+
+/* 1枚目：ホバー時の微調整 */
+.p-community-vision__img-wrapper:nth-child(1):hover {
+  top: 8%;  /* 少し上に */
+  left: 2%; /* 少し右に */
+  /* GSAPのインラインスタイルを上書きするために必要 */
+  transform: scale(1.2) rotate(0deg) !important;
+  z-index: 5
+}
+
+/* --- 2枚目（中央） --- */
+.p-community-vision__img-wrapper:nth-child(2) {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(0deg);
+  z-index: 2;
+  width: 80%;
+}
+
+/* 2枚目：ホバー時の微調整 */
+.p-community-vision__img-wrapper:nth-child(2):hover {
+  top: -2%; /* 少し上に */
+  
+  /* 中央配置の translateX(-50%) を維持しつつ拡大 */
+  transform: translateX(-50%) scale(1.1) rotate(0deg) !important;
+  z-index: 5
+}
+
+/* --- 3枚目（右） --- */
+.p-community-vision__img-wrapper:nth-child(3) {
+  top: 20%;
+  right: 0;
+  left: auto;
+  transform: rotate(5deg);
+  z-index: 1;
+}
+
+/* 3枚目：ホバー時の微調整 */
+.p-community-vision__img-wrapper:nth-child(3):hover {
+  top: 22%;  /* 少し上に */
+  right: 2%; /* 少し左に */
+  transform: scale(1.1) rotate(0deg) !important;
+  z-index: 5;
 }
