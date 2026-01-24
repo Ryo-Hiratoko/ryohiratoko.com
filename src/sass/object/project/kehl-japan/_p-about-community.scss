@@ -8,8 +8,6 @@
 .p-about-community__inner {
   padding-right: $padding-sp;
   padding-left: $padding-sp;
-
-  @include mq("md") {}
 }
 
 .p-about-community__title {
@@ -23,7 +21,6 @@
 .p-about-community__items {
   display: flex;
   justify-content: center;
-
   gap: rem(32);
   margin-right: auto;
   margin-left: auto;
@@ -32,17 +29,16 @@
   align-items: center;
 
   @include mq("md") {
-    align-items: stretch; // ensure all .p-about-community__item have equal height
     flex-direction: row;
+    align-items: stretch;
   }
 }
 
 .p-about-community__item {
+  width: rem(360);
+  padding-top: rem(24);
   background: $white;
   border-radius: rem(16);
-  padding-top: rem(24);
-  width: rem(360);
-  // min-height removed to allow flexible height
   text-align: center;
   box-shadow: 0 rem(4) rem(6) rgba(0, 0, 0, 0.1);
   display: flex;
@@ -64,12 +60,11 @@
 }
 
 .p-about-community__head {
-  padding-left: rem(40);
   padding-right: rem(40);
+  padding-left: rem(40);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
 }
 
 .p-about-community__amount {
@@ -138,20 +133,16 @@
   margin-top: rem(32);
   margin-bottom: rem(32);
   text-align: left;
-  padding-left: rem(24);
   padding-right: rem(24);
+  padding-left: rem(24);
   display: flex;
   flex-direction: column;
   gap: rem(8);
   flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-bottom: rem(32);
   justify-content: space-between;
 }
 
-.p-about-community__feature  {
+.p-about-community__feature {
   display: flex;
   align-items: flex-start;
   gap: rem(8);

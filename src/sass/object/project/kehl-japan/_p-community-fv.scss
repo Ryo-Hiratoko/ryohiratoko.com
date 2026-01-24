@@ -1,7 +1,5 @@
 @use "global" as *;
 
-@use "global" as *;
-
 .p-community-fv {
   padding-top: rem(80);
   padding-bottom: rem(80);
@@ -90,7 +88,9 @@
   @include mq("md") {
     max-width: rem(600);
   }
+}
 
+.p-community-fv__img {
   img {
     width: 100%;
     height: auto;
