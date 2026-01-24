@@ -1762,6 +1762,11 @@ select::-ms-expand {
   overflow: hidden;
   -webkit-box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, .15);
           box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, .15);
+  -webkit-transition: z-index 0s, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: z-index 0s, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0s, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  cursor: pointer;
 }
 .p-community-vision__img-wrapper:nth-child(1) {
   top: 10%;
@@ -1787,6 +1792,14 @@ select::-ms-expand {
   z-index: 2;
 }
 
+.p-community-vision__img-wrapper:hover {
+  z-index: 500; /* 強制的に最前面へ */
+  -webkit-transform: scale(1.1) rotate(0deg) !important;
+          transform: scale(1.1) rotate(0deg) !important; /* 少し拡大して、角度をまっすぐに（見やすく） */
+  -webkit-box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, .25);
+          box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, .25); /* 影を濃くして浮遊感を強調 */
+}
+
 .p-community-vision__img {
   width: 100%;
   height: auto;
@@ -1794,11 +1807,6 @@ select::-ms-expand {
   aspect-ratio: 4/3;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.u-mt-24 {
-  margin-top: 24px;
-  margin-top: 1.5rem;
 }
 
 .p-about-me {

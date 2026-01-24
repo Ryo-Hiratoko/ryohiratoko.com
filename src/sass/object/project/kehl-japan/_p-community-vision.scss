@@ -178,8 +178,9 @@
     z-index: 2;
   }
 }
+
 .p-community-vision__img-wrapper:hover {
-  z-index: 100 !important; /* 強制的に最前面へ */
+  z-index: 500; /* 強制的に最前面へ */
   transform: scale(1.1) rotate(0deg) !important; /* 少し拡大して、角度をまっすぐに（見やすく） */
   box-shadow: 0 rem(16) rem(40) rgba(0, 0, 0, 0.25); /* 影を濃くして浮遊感を強調 */
 }
@@ -188,12 +189,6 @@
   width: 100%;
   height: auto;
   display: block;
-  // アスペクト比を揃える（例：4:3の画像）
   aspect-ratio: 4 / 3;
   object-fit: cover;
-}
-
-// ちょっとした余白用ユーティリティクラス（もし無ければ）
-.u-mt-24 {
-  margin-top: rem(24);
 }
