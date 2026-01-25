@@ -159,13 +159,13 @@ get_header(); ?>
       <div class="p-community-vision__content">
         <div class="p-community-vision__text c-text">
           <p>
-            I work in Germany as a freelance web designer and developer. I wanted to create a simple way for people nearby and those interested in Japan to meet and talk in a relaxed setting. That is why I started this community.
+            I have lived in Berlin and Leipzig, and then I moved to Kehl. Since I barely knew anyone here, I wanted to meet new people and build connections in this area. That was the start of Kehl Japan.
           </p>
           <p>
-            Kehl Japan is not a company. It is an open and friendly community. My goal is to connect people from Europe and Japan and hopefully inspire small collaborations and projects in the future.
+            I have experience organizing volunteer events, and I also worked in Japan as a company employee. With that background, I wanted to create a friendly place where people in Kehl and nearby cities who are interested in Japan can connect naturally.
           </p>
           <p>
-            If you are interested, please come and join one of our events.
+            Whether you want to practice a little Japanese or simply learn more about Japanese culture, you are very welcome. I hope this community can become a bridge between Japan and Europe and lead to small collaborations and projects in the future.
           </p>
         </div>
       </div>
