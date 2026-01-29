@@ -112,4 +112,20 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
+
+  const visionImages = document.querySelectorAll('.p-community-vision__img-wrapper');
+  
+  if (visionImages.length > 0) {
+    visionImages.forEach(function(img) {
+      img.addEventListener('mouseenter', function() {
+        // 1. すべての画像から 'is-active' クラスを削除
+        visionImages.forEach(function(el) {
+          el.classList.remove('is-active');
+        });
+        
+        // 2. ホバーされた画像にだけ 'is-active' クラスを追加
+        this.classList.add('is-active');
+      });
+    });
+  }
 });

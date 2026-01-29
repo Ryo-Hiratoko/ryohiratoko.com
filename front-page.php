@@ -265,6 +265,11 @@ $privacy_policy = esc_url(home_url('/privacy-policy/'));
 
 <section class="p-price">
   <div class="p-price__inner">
+    <?php
+      // 言語判定を一度だけ行う（可読性とパフォーマンス向上）
+      $is_jp = ( get_locale() == 'ja' );
+    ?>
+
     <div class="p-price__head">
       <h2 class="p-price__title c-title">Flexible Pricing Plans</h2>
     </div>
@@ -272,11 +277,19 @@ $privacy_policy = esc_url(home_url('/privacy-policy/'));
     <div class="p-price__content">
       <ul class="p-price__items">
 
-        <!-- Spot Support Plan -->
         <li class="p-price__item p-price__item--gray">
           <div class="p-price__wrap">
             <h3 class="p-price__name">Spot Support</h3>
-            <p class="p-price__amount"><span class="p-price__num">30€</span> / hour + VAT</p>
+            <p class="p-price__amount">
+              <span class="p-price__num">
+                <?php if ( $is_jp ) : ?>
+                  3,000円
+                <?php else : ?>
+                  30€
+                <?php endif; ?>
+              </span>
+              / hour + VAT
+            </p>
             <div class="p-price__btn p-price__btn--white c-cv-btn">
               <a href="#contact">
                 <div class="c-cv-btn__inner"><span>Contact</span></div>
@@ -306,11 +319,19 @@ $privacy_policy = esc_url(home_url('/privacy-policy/'));
           </ul>
         </li>
 
-        <!-- Standard Web Project -->
         <li class="p-price__item p-price__item--orange">
           <div class="p-price__wrap">
             <h3 class="p-price__name">Standard Web Project</h3>
-            <p class="p-price__amount"><span class="p-price__num">60€</span> / day + VAT</p>
+            <p class="p-price__amount">
+              <span class="p-price__num">
+                <?php if ( $is_jp ) : ?>
+                  6,000円
+                <?php else : ?>
+                  60€
+                <?php endif; ?>
+              </span>
+              / day + VAT
+            </p>
             <div class="p-price__btn p-price__btn--black c-cv-btn">
               <a href="#contact">
                 <div class="c-cv-btn__inner"><span>Contact</span></div>
@@ -340,11 +361,19 @@ $privacy_policy = esc_url(home_url('/privacy-policy/'));
           </ul>
         </li>
 
-        <!-- Large-scale Web Project -->
         <li class="p-price__item p-price__item--black">
           <div class="p-price__wrap">
             <h3 class="p-price__name">Large-scale Web Project</h3>
-            <p class="p-price__amount"><span class="p-price__num">120€</span> / day + VAT</p>
+            <p class="p-price__amount">
+              <span class="p-price__num">
+                <?php if ( $is_jp ) : ?>
+                  12,000円
+                <?php else : ?>
+                  120€
+                <?php endif; ?>
+              </span>
+              / day + VAT
+            </p>
             <div class="p-price__btn p-price__btn--orange c-cv-btn">
               <a href="#contact">
                 <div class="c-cv-btn__inner"><span>Contact</span></div>

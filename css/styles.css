@@ -1742,6 +1742,7 @@ select::-ms-expand {
   }
 }
 
+/* 写真のラッパー（共通設定） */
 .p-community-vision__img-wrapper {
   position: absolute;
   top: 0;
@@ -1752,17 +1753,16 @@ select::-ms-expand {
   overflow: hidden;
   -webkit-box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, .15);
           box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, .15);
+  cursor: pointer;
   -webkit-transition: z-index 0s 0.3s, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
   transition: z-index 0s 0.3s, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
   transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0s 0.3s;
   transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0s 0.3s, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
-  cursor: pointer;
 }
 
-.p-community-vision__img-wrapper:hover {
-  z-index: 500;
-  -webkit-transform: scale(1.1) rotate(0deg) !important;
-          transform: scale(1.1) rotate(0deg) !important;
+/* 共通アクティブ設定（.is-active がついた時） */
+.p-community-vision__img-wrapper.is-active {
+  z-index: 100;
   -webkit-box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, .25);
           box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, .25);
   -webkit-transition: z-index 0s 0s, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
@@ -1780,14 +1780,13 @@ select::-ms-expand {
   z-index: 3;
 }
 
-/* 1枚目：ホバー時の微調整 */
-.p-community-vision__img-wrapper:nth-child(1):hover {
+/* 1枚目：アクティブ時の位置・サイズ */
+.p-community-vision__img-wrapper:nth-child(1).is-active {
   top: 8%; /* 少し上に */
   left: 2%; /* 少し右に */
-  /* GSAPのインラインスタイルを上書きするために必要 */
-  -webkit-transform: scale(1.2) rotate(0deg) !important;
-          transform: scale(1.2) rotate(0deg) !important;
-  z-index: 5;
+  -webkit-transform: scale(1.1) rotate(0deg) !important;
+          transform: scale(1.1) rotate(0deg) !important;
+  z-index: 10;
 }
 
 /* --- 2枚目（中央） --- */
@@ -1800,13 +1799,12 @@ select::-ms-expand {
   width: 80%;
 }
 
-/* 2枚目：ホバー時の微調整 */
-.p-community-vision__img-wrapper:nth-child(2):hover {
+/* 2枚目：アクティブ時の位置・サイズ */
+.p-community-vision__img-wrapper:nth-child(2).is-active {
   top: -2%; /* 少し上に */
-  /* 中央配置の translateX(-50%) を維持しつつ拡大 */
   -webkit-transform: translateX(-50%) scale(1.1) rotate(0deg) !important;
           transform: translateX(-50%) scale(1.1) rotate(0deg) !important;
-  z-index: 5;
+  z-index: 10;
 }
 
 /* --- 3枚目（右） --- */
@@ -1819,13 +1817,13 @@ select::-ms-expand {
   z-index: 1;
 }
 
-/* 3枚目：ホバー時の微調整 */
-.p-community-vision__img-wrapper:nth-child(3):hover {
-  top: 22%; /* 少し上に */
+/* 3枚目：アクティブ時の位置・サイズ */
+.p-community-vision__img-wrapper:nth-child(3).is-active {
+  top: 18%; /* 少し上に */
   right: 2%; /* 少し左に */
   -webkit-transform: scale(1.1) rotate(0deg) !important;
           transform: scale(1.1) rotate(0deg) !important;
-  z-index: 5;
+  z-index: 10;
 }
 
 .p-about-me {

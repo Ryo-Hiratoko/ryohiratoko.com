@@ -391,4 +391,4 @@ function ryo_lang_link_by_slug( $slug ) {
   
     // Polylang なしのフォールバック（英語既定）
     return home_url( '/' . trailingslashit( $slug ) );
-  }
+}

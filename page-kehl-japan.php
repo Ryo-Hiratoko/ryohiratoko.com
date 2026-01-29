@@ -14,7 +14,7 @@ get_header(); ?>
         </div>
 
         <h1 class="p-community-fv__catchcopy c-title">
-          Kehl Japan Community
+          Kehl Japan - Japanese Language & Culture
         </h1>
 
         <p class="p-community-fv__sub-copy c-text">
